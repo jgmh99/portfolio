@@ -1,131 +1,282 @@
-export const projects = [
+export const projectShowcases = [
   {
     id: "asdf",
-    name: "ASDF (LinkService) 리뉴얼",
-    period: "2025.03 - 2026.05",
-    summary:
-      "링크 서비스 관리자/운영 기능을 리뉴얼한 Next.js 기반 프로젝트. 다국어 처리, 에디터, 드래그 정렬 등 운영 효율 중심 기능을 구현했습니다.",
-    stack: ["Next.js 16", "React 19", "next-intl", "Zustand", "Tailwind CSS"],
-    role: "프론트엔드 개발",
-    highlights: [
-      "다국어 라우팅과 국제화 구조 설계",
-      "콘텐츠 편집/배치 관리 UX 고도화",
-      "컴포넌트 재사용성 중심 구조 정리",
+    title: "ASDF 리뉴얼",
+    period: "2026.04 - 진행중",
+    oneLiner: "SNS 서비스 회원/관리자 기능 고도화 및 CRM 운영 표준화",
+    context:
+      "회원용 서비스 기능 확장과 관리자 운영도구 고도화를 동시에 진행해야 했습니다.",
+    myScope: [
+      "회원용 댓글/신고·차단/로그인 유도/프로필 차단 기능 구현",
+      "관리자용 회원 목록 필터·정렬·페이지네이션 및 배치 처리 구현",
+      "CRM 탭 UI/통계 필터/API 연동 및 에러 처리 표준화",
     ],
-    commitBasedWork: [
-      "2026-05-13 회원 CRM 통계 페이지 공개 유무 추가",
-      "2026-05-13 회원 로그 페이지 생성",
-      "2026-05-12 회원 차단내역 모달 내부 스크롤 적용",
+    actions: [
+      "관심사 저장/언어 전환/가이드 모달 상태 동기화 적용",
+      "차단 상세 모달, 댓글/신고 조회·삭제 기능 운영 흐름 정리",
+      "normalize 기반 응답 처리로 운영 화면 안정성 강화",
     ],
-    repoPath: "/Users/jegalminhyuk/Desktop/bvdev/ASDF/asdf",
-    image: null,
+    outcomes: [
+      "회원/관리자 기능 확장 속도와 운영 안정성을 동시에 개선했습니다.",
+      "CRM 데이터 처리의 일관성과 에러 대응 품질을 향상했습니다.",
+      "운영 화면의 유지보수성과 재사용성을 높였습니다.",
+    ],
+    tech: ["Next.js 16", "React 19", "next-intl", "Zustand"],
+    links: [{ label: "서비스 바로가기", url: "https://asdf.my/login" }],
   },
   {
-    id: "dongne-flower-vender",
-    name: "동네꽃집 벤더",
-    period: "2025.11 - 2026.05",
-    summary:
-      "플라워샵 벤더용 주문/상품/운영 관리 웹 서비스. 결제 연동과 일정/주소/상품 편집 등의 실무 흐름을 제품화했습니다.",
-    stack: ["Next.js 14", "React 18", "Zustand", "SWR", "Tailwind CSS", "PHP API"],
-    role: "프론트엔드 개발",
-    highlights: [
-      "벤더 운영에 필요한 주문 및 상품 워크플로우 구현",
-      "결제 위젯 연동 및 예외 케이스 대응",
-      "상태 관리 표준화로 화면 간 데이터 일관성 확보",
+    id: "flobee-service",
+    title: "플로비 서비스",
+    period: "2025.11 - 2026.04",
+    oneLiner: "고객용 꽃/화환 탐색-주문-결제-주문조회 전체 플로우 구축 및 안정화",
+    context:
+      "실서비스 운영 단계에서 지도 기반 탐색, 비회원 주문, 주문 전환 구간의 안정성이 동시에 필요했습니다.",
+    myScope: [
+      "고객용 메인/목록/상세/주문/결제/주문조회 화면 구현",
+      "지도 기반 재조회·정렬·필터·비회원 주문 기능 구현",
+      "상호작용 이슈 대응 및 렌더링 최적화",
     ],
-    commitBasedWork: [
-      "2026-04-03 상품 카테고리 옵션 변경",
-      "2026-02-26 메인페이지 영업 상태 API 연결",
-      "2026-02-24 제안서 작성 후 뒤로가기 동작 수정",
+    actions: [
+      "지도 타일/클릭/필터/스크롤 이슈를 우선순위 기반으로 수정",
+      "API 중복 호출을 줄여 화면 반응성을 개선",
+      "주문 단계별 예외 케이스를 정리해 이탈 구간을 축소",
     ],
-    repoPath: "/Users/jegalminhyuk/Desktop/bvdev/dongne-flower-vender",
-    image: null,
+    outcomes: [
+      "탐색-주문 전환 흐름의 체감 안정성을 높였습니다.",
+      "지도 기반 탐색 동작 신뢰도와 일관성을 개선했습니다.",
+      "핵심 화면 렌더링 지연과 사용자 불편 이슈를 줄였습니다.",
+    ],
+    tech: ["Next.js 14", "React 18", "Zustand", "Tailwind CSS", "PHP API"],
+    links: [{ label: "플로비 서비스", url: "https://flobee.flowers/" }],
   },
   {
-    id: "dongne-flower-admin",
-    name: "동네꽃집 어드민",
-    period: "2025.12 - 2026.05",
-    summary:
-      "서비스 운영자를 위한 백오피스. 카테고리/이미지 라이브러리/콘텐츠 관리 기능 중심의 관리자 UI를 구축했습니다.",
-    stack: ["Next.js 14", "React 18", "Zustand", "Playwright", "Tailwind CSS"],
-    role: "프론트엔드 개발",
-    highlights: [
-      "어드민 정보 구조를 고려한 화면/네비게이션 설계",
-      "운영 도구 생산성을 높이는 편집 및 목록 UX 적용",
-      "E2E 테스트 기반 핵심 플로우 회귀 검증",
+    id: "flobee-vendor",
+    title: "플로비 벤더",
+    period: "2025.11 - 2026.04",
+    oneLiner: "입점사용자용 주문/상품/제안서/정산 운영 서비스 구축",
+    context:
+      "입점사용자가 실제 영업 환경에서 주문 처리와 상품 운영을 빠르게 수행할 수 있는 도구가 필요했습니다.",
+    myScope: [
+      "상품관리/주문처리/제안서/정산 화면 구현",
+      "작성 제한·제출 검증·카운트다운·필터/정렬 기능 구현",
+      "영업 상태 토글 API 및 재진입 예외 처리",
     ],
-    commitBasedWork: [
-      "2026-05-06 벤더 상세 지번 주소 예외 처리",
-      "2026-05-06 벤더 주소/CRM 주소 수정",
-      "2026-05-06 꽃집 관리 주소 수정",
+    actions: [
+      "도메인/API 변경에 대응해 운영 패치를 반복 적용",
+      "상태 전환과 뒤로가기 재진입 시나리오를 점검·수정",
+      "운영 동선 기준으로 화면 흐름과 검증 로직을 정리",
     ],
-    repoPath: "/Users/jegalminhyuk/Desktop/bvdev/dongne-flower-admin",
-    image: null,
+    outcomes: [
+      "입점사용자의 반복 업무 동선을 단축했습니다.",
+      "주문/상품 처리 과정의 예외 오류를 줄였습니다.",
+      "운영 중 빠른 패치가 가능한 구조로 안정성을 확보했습니다.",
+    ],
+    tech: ["Next.js 14", "React 18", "Zustand", "Tailwind CSS", "PHP API"],
+    links: [{ label: "플로비 벤더", url: "https://vender.flobee.flowers/auth/login" }],
   },
   {
-    id: "dongne-flower",
-    name: "동네꽃집 사용자 서비스",
-    period: "2025.10 - 2026.05",
-    summary:
-      "최종 사용자 대상 꽃 주문 서비스. 위치/주소/알림/검색/주문 단계 UX를 개선하며 서비스 사용성을 높였습니다.",
-    stack: ["Next.js 14", "React 18", "Zustand", "Swiper", "Tailwind CSS", "PHP API"],
-    role: "프론트엔드 개발",
-    highlights: [
-      "주문 전환율을 고려한 탐색/상세/결제 흐름 개선",
-      "모바일 중심 상호작용 최적화",
-      "공용 UI 패턴과 상태 로직 재사용 구조화",
+    id: "flobee-admin",
+    title: "플로비 어드민",
+    period: "2025.11 - 2026.04",
+    oneLiner: "운영자용 백오피스 및 CRM 중심 운영도구 구조화",
+    context:
+      "회원/벤더/주문/커뮤니티/프로모션 데이터를 한 곳에서 운영해야 했고, 주소/검색 정합성 이슈가 반복되었습니다.",
+    myScope: [
+      "회원/벤더/주문/커뮤니티/프로모션 운영 화면 개발",
+      "CRM 섹션 구조화 및 검색/필터 정합성 보정",
+      "주소/배송 포맷/404/네비 오류 등 운영 이슈 정리",
     ],
-    commitBasedWork: [
-      "2026-05-11 AI 오더 샘플 이미지 lazy 적용",
-      "2026-05-11 주변 꽃집 클릭 이벤트 수정",
-      "2026-05-06 주변 꽃집 지도/타일/필터 동작 수정",
+    actions: [
+      "지번 주소 예외 처리와 벤더/CRM 주소 수정 동작을 표준화",
+      "디버그 코드 정리 및 오류 재현 경로를 단순화",
+      "운영 데이터 확인-수정 흐름을 관리자 관점으로 재배치",
     ],
-    repoPath: "/Users/jegalminhyuk/Desktop/bvdev/dongne-flower",
-    image: null,
-  },
-  {
-    id: "theme-sidiz",
-    name: "theme-sidiz (Shopify 테마)",
-    period: "2025.06 - 2025.10",
-    summary:
-      "Shopify 스토어 테마 커스터마이징 프로젝트. 상품/이벤트/브랜드/고객지원 섹션을 비즈니스 요구에 맞게 구현했습니다.",
-    stack: ["Shopify Liquid", "JavaScript", "SCSS/CSS", "Theme Sections"],
-    role: "프론트엔드 개발",
-    highlights: [
-      "다양한 섹션 템플릿 구성 및 운영 편의성 강화",
-      "브랜드/프로모션 페이지의 표현력과 유지보수성 개선",
-      "다국어 locale 구조 기반 글로벌 대응",
+    outcomes: [
+      "운영 데이터 오류 재발 빈도를 낮췄습니다.",
+      "관리자 수정 작업의 안정성과 예측 가능성을 높였습니다.",
+      "운영 이슈 대응 속도를 개선했습니다.",
     ],
-    commitBasedWork: [
-      "2025-10-21 1:1 문의 답변 레이아웃 디자인 수정",
-      "2025-10-21 s-culture 신청/리뷰 내역 로드 조건 수정",
-      "2025-09-23 모달 작업 브랜치 기준 PR 머지",
-    ],
-    repoPath: "/Users/jegalminhyuk/Desktop/bvdev/theme-sidiz",
-    image: null,
+    tech: ["Next.js 14", "React 18", "Zustand", "Tailwind CSS", "PHP API"],
+    links: [],
   },
   {
     id: "wowcruise",
-    name: "wowcruise",
-    period: "2025.08 - 2025.10",
-    summary:
-      "크루즈 상품 탐색/상세/프로모션 중심 서비스. 프론트엔드와 PHP API 연동 구조에서 리스트/상세 성능과 운영 흐름을 다뤘습니다.",
-    stack: ["React", "PHP", "MySQL", "Legacy + Migration"],
-    role: "프론트엔드 개발",
-    highlights: [
-      "상품 리스트/상세 화면 구성 및 API 연동",
-      "프로모션/메인 배너 데이터 노출 구조 개선",
-      "구버전(project_old)과 신규(project) 병행 운영 대응",
+    title: "WOWCRUISE",
+    period: "2025.07 - 2025.10",
+    oneLiner: "크루즈 예약 플랫폼 FE 구축 및 예약 플로우 안정화",
+    context:
+      "예약 도메인 특성상 다단계 입력/검증/복귀 흐름과 외부 API 연동 안정성이 중요했습니다.",
+    myScope: [
+      "홈/로그인/검색/상세/예약 멀티스텝/마이페이지/찜 화면 구현",
+      "중첩 라우팅 및 Context 기반 상태관리 구성",
+      "예약 상태 저장/복원, 결제 검증, 필터 UX 구현",
     ],
-    commitBasedWork: [
-      "현재 로컬 폴더 기준으로는 git 커밋 이력이 없어 push 기준 자동 추출 불가",
-      "필요 시 원격 저장소 URL 기준으로 작업 이력 연결 가능",
+    actions: [
+      "sessionStorage + TTL 만료 처리로 예약 상태 일관성을 보장",
+      "카드 타입 판별 및 Luhn 검증 로직으로 결제 입력 안정화",
+      "API 분리 호출과 방어적 파싱으로 예외 상황을 안전하게 처리",
     ],
-    repoPath: "/Users/jegalminhyuk/Desktop/bvdev/wowcruise",
-    image: null,
+    outcomes: [
+      "예약 단계 전환의 안정성과 사용자 신뢰를 높였습니다.",
+      "예외 입력/복귀 시나리오에서 오류 발생률을 낮췄습니다.",
+      "실서비스 운영 시 회귀 이슈 대응 속도를 높였습니다.",
+    ],
+    tech: ["React", "PHP", "MySQL"],
+    links: [{ label: "서비스 바로가기", url: "https://www.wowcruise.kr/" }],
+  },
+  {
+    id: "ader",
+    title: "ADER 리뉴얼",
+    period: "2025.04 - 2025.07",
+    oneLiner: "Cafe24 기반 브랜드몰 독립몰 전환 및 주요 구매/계정 화면 리뉴얼",
+    context:
+      "독립몰 전환 과정에서 상품 노출, 주문 내역, 로그인 흐름 등 핵심 사용자 시나리오의 안정적 이관이 필요했습니다.",
+    myScope: [
+      "사이드바 메뉴 UI 및 메뉴 이동 동작 QA 반영",
+      "상품리스트/상세의 품절·품절임박 및 옵션별 노출 상태 기능 구현",
+      "마이페이지 주문내역, 주문 상세/취소/환불, 기간검색 UI 개발",
+      "SNS/이메일 로그인 및 마이그레이션 기준 사용자별 QA 수행",
+    ],
+    actions: [
+      "기존 Cafe24 구조에서 독립몰 전환 시 발생하는 화면 분기 이슈를 정리",
+      "상품/주문/계정 핵심 플로우별 QA 시나리오를 기준으로 화면 동작 보정",
+      "운영 중 재현되는 노출/상태 이슈를 빠르게 패치 가능한 구조로 정비",
+    ],
+    outcomes: [
+      "독립몰 전환 구간의 사용자 핵심 시나리오 안정성을 확보했습니다.",
+      "상품 노출/주문내역/로그인 관련 운영 이슈 대응 속도를 높였습니다.",
+      "프로젝트 전환기의 QA 품질과 릴리즈 신뢰도를 개선했습니다.",
+    ],
+    tech: ["PHP", "JavaScript", "jQuery", "CSS", "Cafe24"],
+    links: [{ label: "서비스 바로가기", url: "https://www.adererror.com/" }],
+  },
+  {
+    id: "sidiz",
+    title: "SIDIZ 리뉴얼",
+    period: "2024.09 - 2025.05",
+    oneLiner: "Shopify 브랜드몰 리뉴얼 및 계정/구매경험/고객지원 기능 고도화",
+    context:
+      "브랜드몰 운영 단계에서 마이페이지, 고객지원, 상품상세 기능의 일관성과 확장성이 필요했습니다.",
+    myScope: [
+      "마이페이지(주문조회/상세, 리뷰 작성/조회) 기능 개발",
+      "1:1 문의, 거래명세서 신청, S-CULTURE 신청 분기 로직 구현",
+      "상품상세 리뷰 필터/페이지네이션, Journey 연도 필터/앵커 구현",
+    ],
+    actions: [
+      "탭 전환과 URL 파라미터 동기화 로직을 구성",
+      "신청 상태 분기(신청예정/마감) 및 중복 신청 차단 로직 반영",
+      "로그인/장바구니/북마크 등 공통 계정·구매경험 흐름 개선",
+    ],
+    outcomes: [
+      "운영/CS 관련 핵심 화면의 사용성과 안정성을 높였습니다.",
+      "기능 추가와 정책 변경에 대응하기 쉬운 구조를 확보했습니다.",
+      "구매경험과 계정 흐름의 완성도를 개선했습니다.",
+    ],
+    tech: ["Shopify Liquid", "JavaScript", "SCSS/CSS"],
+    links: [{ label: "서비스 바로가기", url: "https://kr.sidiz.com" }],
   },
 ];
 
-export const resumeItems = [...projects].sort((a, b) =>
-  b.period.localeCompare(a.period),
-);
+export const resumeItems = [
+  {
+    id: "asdf",
+    project: "ASDF - 자사 프로젝트 SNS",
+    company: "(주)방배동밸리",
+    period: "2026.04 - 진행중",
+    role: "프론트엔드 개발 (FE 4인 팀)",
+    environment: "Next.js, Swiper, Tailwind CSS, Zustand",
+    team: "PM 1 / DE 1 / FE 4 / BE 2",
+    highlights: [
+      "댓글 CRUD, 신고·차단, 비로그인 사용자 로그인 유도 플로우를 구현했습니다.",
+      "관심사 저장/설정 언어 전환/가이드 모달 위치 계산 및 상태 동기화를 반영했습니다.",
+      "회원 목록 필터·정렬·페이지네이션, 차단 상세 모달, 댓글/신고 조회·배치삭제 기능을 구현했습니다.",
+      "CRM 탭 UI, 통계 필터, API 연동에 normalize·에러 처리 표준을 적용했습니다.",
+    ],
+    outcomes: [
+      "회원/운영 관리 화면의 데이터 정합성과 운영 처리 속도를 개선했습니다.",
+      "반복되는 예외 처리 패턴을 표준화해 유지보수 부담을 줄였습니다.",
+    ],
+  },
+  {
+    id: "flobee",
+    project: "FLOBEE - 자사 프로젝트 (고객/입점사용/관리자)",
+    company: "(주)방배동밸리",
+    period: "2025.11 - 2026.04",
+    role: "프론트엔드 개발 (FE 3인 팀)",
+    environment:
+      "Next.js, Zustand, React Hook Form, Axios, Swiper, Toastify, Toast UI Editor, Tailwind CSS",
+    team: "PM 1 / DE 1 / FE 3 / BE 2",
+    highlights: [
+      "고객용 서비스에서 꽃/화환 탐색~주문~결제~주문조회 플로우와 비회원 주문 기능을 구현했습니다.",
+      "지도 기반 재조회·정렬·필터 및 클릭/타일/스크롤 이슈를 개선하고 API 중복 호출을 최소화했습니다.",
+      "입점사용 서비스에서 상품관리/주문처리/제안서/정산 화면과 작성 제한·제출 검증·카운트다운·필터/정렬을 구현했습니다.",
+      "관리자 서비스에서 회원/벤더/주문/커뮤니티/프로모션 운영도구를 개발하고 CRM 섹션을 구조화했습니다.",
+      "검색·필터 정합성, 404/네비 오류, 배송정보 포맷, 디버그 코드 정리를 통해 운영성을 개선했습니다.",
+    ],
+    outcomes: [
+      "고객 주문 플로우의 체감 안정성과 벤더 운영 동선을 동시에 개선했습니다.",
+      "운영자 도구의 오류 재발 빈도를 낮추고 실서비스 대응 속도를 높였습니다.",
+    ],
+  },
+  {
+    id: "wowcruise",
+    project: "와우크루즈 - 리뉴얼",
+    company: "(주)방배동밸리",
+    period: "2025.07 - 2025.10",
+    role: "프론트엔드 개발",
+    environment: "React, React-DOM, Axios, Bootstrap, CSS, Styled-Components",
+    team: "DE 1 / FE 1 / BE 1",
+    highlights: [
+      "홈/로그인/검색/상세/예약 멀티스텝/마이페이지/찜 화면을 포함한 예약 플랫폼 FE를 개발했습니다.",
+      "React Router 중첩 라우팅과 UserContext/FavoritesContext 상태관리를 구성했습니다.",
+      "예약 상태 sessionStorage 저장·복원, TTL 만료 및 예외 처리 로직을 적용했습니다.",
+      "카드 타입 판별 및 Luhn 기반 결제 검증 로직을 구현했습니다.",
+      "다중선택 필터 UX, API 분리 호출, 방어적 데이터 파싱, 커스텀 전역 알림 모달을 반영했습니다.",
+    ],
+    outcomes: [
+      "예약 단계 전환의 안정성과 예외 대응력을 높였습니다.",
+      "로그인 복귀/반응형 내비 등 사용자 흐름 품질을 개선했습니다.",
+    ],
+  },
+  {
+    id: "ader",
+    project: "ADER - 리뉴얼",
+    company: "(주)방배동밸리",
+    period: "2025.04 - 2025.07",
+    role: "프론트엔드 개발",
+    environment: "PHP, JavaScript, jQuery, CSS (Cafe24)",
+    team: "DE 1 / FE 3 / BE 2 / QA 2",
+    highlights: [
+      "Cafe24 기반 브랜드몰을 독립몰로 전환하는 리뉴얼에 참여했습니다.",
+      "사이드바 메뉴 UI와 이동 동작 QA를 반영했습니다.",
+      "상품리스트/상세의 품절·품절임박 및 옵션별 노출 상태 기능을 구현했습니다.",
+      "마이페이지 주문내역, 주문 단계별 상세/취소/환불 내역, 기간검색 UI를 개발했습니다.",
+      "SNS/이메일 로그인 및 마이그레이션 기준 충족 여부를 사용자별로 QA했습니다.",
+    ],
+    outcomes: [
+      "전환 프로젝트의 화면 안정성과 운영 정합성 확보에 기여했습니다.",
+      "주문/계정 관련 핵심 사용자 시나리오 품질을 개선했습니다.",
+    ],
+  },
+  {
+    id: "sidiz",
+    project: "SIDIZ - 브랜드몰 리뉴얼",
+    company: "(주)방배동밸리",
+    period: "2024.09 - 2025.05",
+    role: "프론트엔드 개발",
+    environment: "Shopify Theme, Liquid, JavaScript, CSS",
+    team: "PM 1 / FE 4 / BE 1",
+    highlights: [
+      "마이페이지 탭 전환 및 URL 파라미터 동기화 기능을 구현했습니다.",
+      "주문조회/상세 UI 렌더링과 상태별 화면 분기를 구현했습니다.",
+      "리뷰 작성/조회, 1:1 문의 모달, 거래명세서 발급 신청 모달/검증 로직을 개발했습니다.",
+      "S-CULTURE 신청 상태 분기(신청예정/마감)와 중복 신청 차단 로직을 반영했습니다.",
+      "제품상세 리뷰 필터(키/몸무게), 페이지네이션, Journey 연도 필터/고정 앵커를 구현했습니다.",
+      "공통 로그인 모달, SNS/이메일 진입 플로우, 장바구니 선택 삭제/총액 재계산/상태 동기화, 북마크 동기화를 개선했습니다.",
+    ],
+    outcomes: [
+      "고객지원/주문/콘텐츠 영역의 기능 완성도와 운영 편의성을 향상했습니다.",
+      "운영 요구사항 변경에 대응 가능한 화면 구조를 확보했습니다.",
+    ],
+  },
+];

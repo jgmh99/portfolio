@@ -7,41 +7,43 @@ export const metadata = {
 export default function ResumePage() {
   return (
     <section className="page-shell">
-      <header className="page-hero">
-        <p className="hero-kicker">Career Timeline</p>
+      <header className="page-head">
+        <p className="label">RESUME</p>
         <h1 className="page-title">경력기술서</h1>
-        <p className="page-subtitle">
-          최신 프로젝트부터, 성과와 개선 내역을 push 이력 기준으로 정리했습니다.
-        </p>
+        {/* <p className="page-subtitle">프로젝트 기간, 개발환경, 인원구성, 핵심 구현과 성과를 상세 정리했습니다.</p> */}
       </header>
 
-      <ol className="timeline">
-        {resumeItems.map((item, index) => (
-          <li key={item.id} className="timeline-item">
-            <span className="timeline-index">{String(index + 1).padStart(2, "0")}</span>
-            <div className="timeline-head">
-              <h2>{item.name}</h2>
+      <section className="block resume-overview">
+        <p><strong>직무</strong> 프론트엔드 개발자</p>
+        <p><strong>경력</strong> 2024.09 ~ 현재</p>
+        <p><strong>핵심역량</strong> 복잡한 화면/상태/라우팅 구현, 운영 이슈 신속 대응, 백오피스·CRM 도구 구조화</p>
+      </section>
+
+      <div className="resume-list">
+        {resumeItems.map((item) => (
+          <article key={item.id} className="resume-item">
+            <div className="row">
+              <h2>{item.project}</h2>
               <span className="period">{item.period}</span>
             </div>
-
-            <p>{item.summary}</p>
-            <p className="meta">
-              <strong>역할</strong> {item.role}
-            </p>
-            <p className="meta">
-              <strong>주요 기술</strong> {item.stack.join(" · ")}
-            </p>
-            <p className="meta">
-              <strong>푸시 기반 주요 작업</strong>
-            </p>
-            <ul className="highlights is-evidence">
-              {item.commitBasedWork.map((work) => (
-                <li key={work}>{work}</li>
+            <p><strong>소속/역할</strong> {item.company} · {item.role}</p>
+            <p><strong>개발환경</strong> {item.environment}</p>
+            <p><strong>인원구성</strong> {item.team}</p>
+            <p><strong>주요 구현</strong></p>
+            <ul className="resume-bullets">
+              {item.highlights.map((point) => (
+                <li key={point}>{point}</li>
               ))}
             </ul>
-          </li>
+            <p><strong>성과/개선</strong></p>
+            <ul className="resume-bullets resume-outcomes">
+              {item.outcomes.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </article>
         ))}
-      </ol>
+      </div>
     </section>
   );
 }
