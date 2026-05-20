@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 
 export default function StarfieldBackground() {
   const canvasRef = useRef(null);
+  const themeRef = useRef("light");
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -57,10 +58,17 @@ export default function StarfieldBackground() {
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
 
+      const isDark = themeRef.current === "dark";
       const g = ctx.createLinearGradient(0, 0, 0, height);
-      g.addColorStop(0, "#f4fbff");
-      g.addColorStop(0.55, "#e9f6ff");
-      g.addColorStop(1, "#e5f2ee");
+      if (isDark) {
+        g.addColorStop(0, "#0d1311");
+        g.addColorStop(0.55, "#121c19");
+        g.addColorStop(1, "#15211d");
+      } else {
+        g.addColorStop(0, "#f4fbff");
+        g.addColorStop(0.55, "#e9f6ff");
+        g.addColorStop(1, "#e5f2ee");
+      }
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, width, height);
 
@@ -68,8 +76,8 @@ export default function StarfieldBackground() {
       glowY += (pointerY - glowY) * 0.08;
 
       const spotlight = ctx.createRadialGradient(glowX, glowY, 0, glowX, glowY, 220);
-      spotlight.addColorStop(0, "rgba(103, 187, 157, 0.28)");
-      spotlight.addColorStop(0.42, "rgba(103, 187, 157, 0.12)");
+      spotlight.addColorStop(0, isDark ? "rgba(65, 146, 115, 0.22)" : "rgba(103, 187, 157, 0.28)");
+      spotlight.addColorStop(0.42, isDark ? "rgba(65, 146, 115, 0.1)" : "rgba(103, 187, 157, 0.12)");
       spotlight.addColorStop(1, "rgba(103, 187, 157, 0)");
       ctx.fillStyle = spotlight;
       ctx.fillRect(0, 0, width, height);
@@ -91,7 +99,10 @@ export default function StarfieldBackground() {
 
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(33, 92, 74, ${Math.max(0.22, alpha * 0.42)})`;
+        const starColor = isDark
+          ? `rgba(168, 214, 196, ${Math.max(0.26, alpha * 0.5)})`
+          : `rgba(33, 92, 74, ${Math.max(0.22, alpha * 0.42)})`;
+        ctx.fillStyle = starColor;
         ctx.fill();
       }
 
@@ -99,6 +110,7 @@ export default function StarfieldBackground() {
     };
 
     resize();
+    themeRef.current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
     createStars();
     draw();
 
@@ -118,10 +130,23 @@ export default function StarfieldBackground() {
       createStars();
     };
 
+    const observer = new MutationObserver(() => {
+      themeRef.current =
+        document.documentElement.getAttribute("data-theme") === "dark"
+          ? "dark"
+          : "light";
+      if (reduceMotion) draw();
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
     window.addEventListener("mousemove", onMouseMove, { passive: true });
     window.addEventListener("resize", onResize);
     return () => {
       cancelAnimationFrame(animationId);
+      observer.disconnect();
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", onResize);
     };

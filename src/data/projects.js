@@ -3,7 +3,7 @@ export const projectShowcases = [
     id: "asdf",
     title: "ASDF 리뉴얼",
     period: "2026.04 - 진행중",
-    oneLiner: "SNS 서비스 회원/관리자 기능 고도화 및 CRM 운영 표준화",
+    oneLiner: "리뉴얼 · 운영 개선 · B2E · SNS 운영도구/CRM · 운영자 대상 회원/콘텐츠 관리",
     context:
       "회원용 서비스 기능 확장과 관리자 운영도구 고도화를 동시에 진행해야 했습니다.",
     myScope: [
@@ -28,7 +28,7 @@ export const projectShowcases = [
     id: "flobee-service",
     title: "플로비 서비스",
     period: "2025.11 - 2026.04",
-    oneLiner: "고객용 꽃/화환 탐색-주문-결제-주문조회 전체 플로우 구축 및 안정화",
+    oneLiner: "신규 구축 · B2C · 플라워 커머스 · 일반 사용자 대상 탐색/주문/결제",
     context:
       "실서비스 운영 단계에서 지도 기반 탐색, 비회원 주문, 주문 전환 구간의 안정성이 동시에 필요했습니다.",
     myScope: [
@@ -53,7 +53,7 @@ export const projectShowcases = [
     id: "flobee-vendor",
     title: "플로비 벤더",
     period: "2025.11 - 2026.04",
-    oneLiner: "입점사용자용 주문/상품/제안서/정산 운영 서비스 구축",
+    oneLiner: "신규 구축 · B2B · 벤더 운영도구 · 입점 벤더 대상 상품/주문/정산 관리",
     context:
       "입점사용자가 실제 영업 환경에서 주문 처리와 상품 운영을 빠르게 수행할 수 있는 도구가 필요했습니다.",
     myScope: [
@@ -78,7 +78,7 @@ export const projectShowcases = [
     id: "flobee-admin",
     title: "플로비 어드민",
     period: "2025.11 - 2026.04",
-    oneLiner: "운영자용 백오피스 및 CRM 중심 운영도구 구조화",
+    oneLiner: "신규 구축 · B2E · 백오피스/CRM · 운영자 대상 통합 운영 관리",
     context:
       "회원/벤더/주문/커뮤니티/프로모션 데이터를 한 곳에서 운영해야 했고, 주소/검색 정합성 이슈가 반복되었습니다.",
     myScope: [
@@ -103,7 +103,7 @@ export const projectShowcases = [
     id: "wowcruise",
     title: "WOWCRUISE",
     period: "2025.07 - 2025.10",
-    oneLiner: "크루즈 예약 플랫폼 FE 구축 및 예약 플로우 안정화",
+    oneLiner: "리뉴얼 · B2C · 예약 플랫폼 · 일반 사용자 대상 검색/예약/결제 흐름",
     context:
       "예약 도메인 특성상 다단계 입력/검증/복귀 흐름과 외부 API 연동 안정성이 중요했습니다.",
     myScope: [
@@ -128,7 +128,7 @@ export const projectShowcases = [
     id: "ader",
     title: "ADER 리뉴얼",
     period: "2025.04 - 2025.07",
-    oneLiner: "Cafe24 기반 브랜드몰 독립몰 전환 및 주요 구매/계정 화면 리뉴얼",
+    oneLiner: "리뉴얼 · B2C · 패션 커머스 · 일반 사용자 대상 상품/주문/계정 경험 개선",
     context:
       "독립몰 전환 과정에서 상품 노출, 주문 내역, 로그인 흐름 등 핵심 사용자 시나리오의 안정적 이관이 필요했습니다.",
     myScope: [
@@ -154,7 +154,7 @@ export const projectShowcases = [
     id: "sidiz",
     title: "SIDIZ 리뉴얼",
     period: "2024.09 - 2025.05",
-    oneLiner: "Shopify 브랜드몰 리뉴얼 및 계정/구매경험/고객지원 기능 고도화",
+    oneLiner: "리뉴얼 · B2C · 브랜드 커머스 · 일반 사용자 대상 구매/계정/고객지원 개선",
     context:
       "브랜드몰 운영 단계에서 마이페이지, 고객지원, 상품상세 기능의 일관성과 확장성이 필요했습니다.",
     myScope: [
@@ -180,10 +180,10 @@ export const projectShowcases = [
 export const resumeItems = [
   {
     id: "asdf",
-    project: "ASDF - 자사 프로젝트 SNS",
+    project: "ASDF - 자사 SNS 프로젝트",
     company: "(주)방배동밸리",
     period: "2026.04 - 진행중",
-    role: "프론트엔드 개발 (FE 4인 팀)",
+    role: "프론트엔드 개발",
     environment: "Next.js, Swiper, Tailwind CSS, Zustand",
     team: "PM 1 / DE 1 / FE 4 / BE 2",
     highlights: [
@@ -202,7 +202,7 @@ export const resumeItems = [
     project: "FLOBEE - 자사 프로젝트 (고객/입점사용/관리자)",
     company: "(주)방배동밸리",
     period: "2025.11 - 2026.04",
-    role: "프론트엔드 개발 (FE 3인 팀)",
+    role: "프론트엔드 개발",
     environment:
       "Next.js, Zustand, React Hook Form, Axios, Swiper, Toastify, Toast UI Editor, Tailwind CSS",
     team: "PM 1 / DE 1 / FE 3 / BE 2",

@@ -6,6 +6,9 @@ export default function ProjectsScrollSection({ projects }) {
   const [active, setActive] = useState(0);
 
   const project = projects[active];
+  const total = projects.length;
+  const goPrev = () => setActive((prev) => (prev - 1 + total) % total);
+  const goNext = () => setActive((prev) => (prev + 1) % total);
 
   return (
     <section className="scroll-scene">
@@ -79,6 +82,30 @@ export default function ProjectsScrollSection({ projects }) {
           </article>
         </div>
 
+        {total > 1 ? (
+          <>
+            <button
+              type="button"
+              className="project-edge-nav project-edge-nav-prev"
+              onClick={goPrev}
+              aria-label="이전 프로젝트"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden>
+                <path d="M14.5 6 8.5 12l6 6" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              className="project-edge-nav project-edge-nav-next"
+              onClick={goNext}
+              aria-label="다음 프로젝트"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden>
+                <path d="m9.5 6 6 6-6 6" />
+              </svg>
+            </button>
+          </>
+        ) : null}
       </div>
     </section>
   );
