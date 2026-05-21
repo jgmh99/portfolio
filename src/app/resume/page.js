@@ -6,8 +6,8 @@ export const metadata = {
 
 export default function ResumePage() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-  const resumeDocx = `${basePath}/files/jegalmh-resume.docx`;
-  const resumePdf = `${basePath}/files/jegalmh-resume.pdf`;
+  const resumeDocx = `${basePath}/files/resume_제갈민혁.docx`;
+  const resumePdf = `${basePath}/files/resume_제갈민혁.pdf`;
 
   return (
     <section className="page-shell">

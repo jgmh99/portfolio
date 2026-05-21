@@ -1,5 +1,6 @@
-import { redirect } from "next/navigation";
+import { projectShowcases } from "@/data/projects";
+import PortfolioSections from "@/components/PortfolioSections";
 
 export default function Home() {
-  redirect("/projects");
+  return <PortfolioSections projects={projectShowcases} />;
 }

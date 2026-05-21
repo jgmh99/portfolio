@@ -18,8 +18,8 @@ from reportlab.platypus import KeepTogether, Paragraph, SimpleDocTemplate, Space
 
 ROOT = Path(__file__).resolve().parents[1]
 TEMPLATE = Path("/Users/jegalminhyuk/Downloads/경력기술서.docx")
-OUTPUT = ROOT / "public" / "files" / "jegalmh-resume.docx"
-PDF_OUTPUT = ROOT / "public" / "files" / "jegalmh-resume.pdf"
+OUTPUT = ROOT / "public" / "files" / "resume_제갈민혁.docx"
+PDF_OUTPUT = ROOT / "public" / "files" / "resume_제갈민혁.pdf"
 FONT_PATH = Path("/System/Library/Fonts/Supplemental/AppleGothic.ttf")
 
 
