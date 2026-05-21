@@ -5,11 +5,28 @@ export const metadata = {
 };
 
 export default function ResumePage() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const resumeDocx = `${basePath}/files/jegalmh-resume.docx`;
+  const resumePdf = `${basePath}/files/jegalmh-resume.pdf`;
+
   return (
     <section className="page-shell">
       <header className="page-head">
         <p className="label">RESUME</p>
-        <h1 className="page-title">경력기술서</h1>
+        <div className="resume-title-row">
+          <h1 className="page-title">경력기술서</h1>
+          <div className="resume-actions" aria-label="경력기술서 파일">
+            <a className="resume-action-link" href={resumePdf} target="_blank" rel="noreferrer">
+              미리보기
+            </a>
+            <a className="resume-action-link" href={resumeDocx} download>
+              DOCX 다운로드
+            </a>
+            <a className="resume-action-link" href={resumePdf} download>
+              PDF 다운로드
+            </a>
+          </div>
+        </div>
         {/* <p className="page-subtitle">프로젝트 기간, 개발환경, 인원구성, 핵심 구현과 성과를 상세 정리했습니다.</p> */}
       </header>
 
