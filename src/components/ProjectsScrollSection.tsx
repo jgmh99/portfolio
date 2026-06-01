@@ -2,36 +2,43 @@
 
 import { useState } from "react";
 
-export default function ProjectsScrollSection({ projects }) {
+export default function ProjectsScrollSection({ projects, filter = "all" }) {
   const [active, setActive] = useState(0);
 
-  const project = projects[active];
-  const total = projects.length;
+  const filteredProjects = projects.filter((project) => {
+    const category = project.category || "company";
+    return filter === "all" || category === filter;
+  });
+  const project = filteredProjects[active];
+  const total = filteredProjects.length;
   const goPrev = () => setActive((prev) => (prev - 1 + total) % total);
   const goNext = () => setActive((prev) => (prev + 1) % total);
 
   return (
     <section className="scroll-scene">
       <div className="scroll-sticky ncloud-block">
-        <div className="ncloud-tabs" role="tablist" aria-label="Project categories">
-          {projects.map((item, idx) => (
-            <button
-              key={item.id}
-              type="button"
-              role="tab"
-              aria-selected={idx === active}
-              className={`ncloud-tab${idx === active ? " is-active" : ""}`}
-              onClick={() => {
-                setActive(idx);
-              }}
-            >
-              <span className="tab-index">{String(idx + 1).padStart(2, "0")}</span>
-              <span>{item.title}</span>
-            </button>
-          ))}
+        <div className="ncloud-project-nav">
+          <div className="ncloud-tabs" role="tablist" aria-label="Project categories">
+            {filteredProjects.map((item, idx) => (
+              <button
+                key={item.id}
+                type="button"
+                role="tab"
+                aria-selected={idx === active}
+                className={`ncloud-tab${idx === active ? " is-active" : ""}`}
+                onClick={() => {
+                  setActive(idx);
+                }}
+              >
+                <span className="tab-index">{String(idx + 1).padStart(2, "0")}</span>
+                <span>{item.title}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div key={project.id} className="ncloud-panel is-switching" data-theme={project.id}>
+        {project ? (
+          <div key={project.id} className="ncloud-panel is-switching" data-theme={project.id}>
           <aside className="ncloud-visual">
             <span className="visual-orb orb-a" />
             <span className="visual-orb orb-b" />
@@ -80,7 +87,12 @@ export default function ProjectsScrollSection({ projects }) {
               </div>
             ) : null}
           </article>
-        </div>
+          </div>
+        ) : (
+          <div className="ncloud-empty">
+            <p>해당 유형의 프로젝트를 준비 중입니다.</p>
+          </div>
+        )}
 
         {total > 1 ? (
           <>

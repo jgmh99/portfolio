@@ -3,6 +3,18 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import ProjectsScrollSection from "@/components/ProjectsScrollSection";
 
+const PROJECT_FILTERS = [
+  { label: "전체", value: "all" },
+  { label: "사내", value: "company" },
+  { label: "Toy", value: "toy" },
+];
+
+const PROJECT_TITLES = {
+  all: "진행한 전체 프로젝트",
+  company: "진행한 사내 프로젝트",
+  toy: "진행한 Toy 프로젝트",
+};
+
 export default function PortfolioSections({ projects }) {
   const SECTION_DURATIONS = [8000, 8000, 60000];
   const [active, setActive] = useState(0);
@@ -10,6 +22,7 @@ export default function PortfolioSections({ projects }) {
   const [repeatMode, setRepeatMode] = useState("all");
   const [elapsedMs, setElapsedMs] = useState(0);
   const [toastMessage, setToastMessage] = useState("");
+  const [projectFilter, setProjectFilter] = useState("all");
   const sectionRefs = useRef([]);
   const rootRef = useRef(null);
   const autoScrollRef = useRef(false);
@@ -328,8 +341,25 @@ export default function PortfolioSections({ projects }) {
       >
         <div className="section-inner project-block">
           <p className="label">PROJECTS</p>
-          <h2 className="page-title">진행한 프로젝트</h2>
-          <ProjectsScrollSection projects={projects} />
+          <div className="project-title-row">
+            <h2 className="page-title">{PROJECT_TITLES[projectFilter]}</h2>
+            <div className="project-type-filter" aria-label="프로젝트 유형 필터">
+              {PROJECT_FILTERS.map((option) => (
+                <button
+                  key={option.value}
+                  type="button"
+                  className={`project-type-filter-button${projectFilter === option.value ? " is-active" : ""}`}
+                  aria-pressed={projectFilter === option.value}
+                  onClick={() => {
+                    setProjectFilter(option.value);
+                  }}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <ProjectsScrollSection key={projectFilter} projects={projects} filter={projectFilter} />
         </div>
       </section>
 
