@@ -1,7 +1,7 @@
 import { resumeItems } from "@/data/projects";
 
 export const metadata = {
-  title: "Resume | Jegal Minhyuk",
+  title: "Career Description | Jegal Minhyuk",
 };
 
 export default function ResumePage() {
@@ -12,7 +12,7 @@ export default function ResumePage() {
   return (
     <section className="page-shell">
       <header className="page-head">
-        <p className="label">RESUME</p>
+        <p className="label">경력기술서</p>
         <div className="resume-title-row">
           <h1 className="page-title">경력기술서</h1>
           <div className="resume-actions" aria-label="경력기술서 파일">
@@ -33,7 +33,7 @@ export default function ResumePage() {
       <section className="block resume-overview">
         <p><strong>직무</strong> 프론트엔드 개발자</p>
         <p><strong>경력</strong> 2024.09 ~ 현재</p>
-        <p><strong>핵심역량</strong> 사용자 화면과 관리자 도구를 구현해온 프론트엔드 개발자입니다. 예약 플로우, 지도 탐색, 검색/필터, 엑셀 다운로드 등 실서비스 화면에서 필요한 기능을 개발했습니다.</p>
+        <p><strong>요약</strong> React와 Next.js 기반의 사용자 서비스와 관리자 도구 개발 경험이 있습니다. 예약 플로우, 지도 기반 탐색, 회원 관리, 검색/필터, 엑셀 다운로드처럼 실제 서비스 운영에 필요한 화면 기능을 구현했습니다.</p>
       </section>
 
       <div className="resume-list">
@@ -43,6 +43,7 @@ export default function ResumePage() {
               <h2>{item.project}</h2>
               <span className="period">{item.period}</span>
             </div>
+            {item.projectType ? <p className="resume-project-type">{item.projectType}</p> : null}
             <p><strong>소속/역할</strong> {item.company} · {item.role}</p>
             <p><strong>개발환경</strong> {item.environment}</p>
             <p><strong>인원구성</strong> {item.team}</p>

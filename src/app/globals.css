@@ -1453,6 +1453,13 @@ body {
   margin: 8px 0 0;
 }
 
+.resume-project-type {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
 .resume-overview p {
   margin: 6px 0 0;
 }

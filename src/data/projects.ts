@@ -159,6 +159,7 @@ export const resumeItems = [
   {
     id: "asdf",
     project: "ASDF",
+    projectType: "SNS 관리센터/관리자 기능",
     company: "(주)방배동밸리",
     period: "2026.04 - 진행중",
     role: "Frontend Developer",
@@ -171,12 +172,13 @@ export const resumeItems = [
       "관리자 로그 엑셀 다운로드 기능을 추가했습니다.",
     ],
     outcomes: [
-      "설정 저장, 통계 노출 제어, 로그 검색/다운로드 기능을 운영 화면에 반영했습니다.",
+      "관리센터의 언어 설정 저장, CRM 통계 공개 여부 제어, 관리자 로그 검색 및 엑셀 다운로드 기능을 구현해 관리자 화면에서 설정·조회·다운로드 흐름을 처리할 수 있도록 구성했습니다.",
     ],
   },
   {
     id: "dongne-flower-admin",
     project: "플로비 어드민",
+    projectType: "회원 관리 및 운영 도구",
     company: "(주)방배동밸리",
     period: "2025.11 - 2026.04",
     role: "Frontend Developer",
@@ -189,12 +191,13 @@ export const resumeItems = [
       "ExcelBtn, useExcelDownload, exportUtils, excelPayload 구조로 모듈화했습니다.",
     ],
     outcomes: [
-      "회원 관리/검색/엑셀 다운로드 흐름을 컴포넌트와 훅/유틸 단위로 분리했습니다.",
+      "회원 관리 화면에서 검색 조건과 다운로드 처리를 분리하고, 엑셀 다운로드 기능을 버튼·훅·유틸 구조로 구성해 회원 정보 조회와 파일 다운로드 흐름을 명확히 나누었습니다.",
     ],
   },
   {
     id: "dongne-flower",
     project: "플로비 서비스",
+    projectType: "사용자 서비스 및 지도 기반 탐색",
     company: "(주)방배동밸리",
     period: "2025.11 - 2026.04",
     role: "Frontend Developer",
@@ -207,12 +210,13 @@ export const resumeItems = [
       "주변 꽃집 리스트/지도 필터·정렬 및 벤더 마커 선택 동작을 수정했습니다.",
     ],
     outcomes: [
-      "적립금 내역 조회와 지도 기반 탐색 기능을 구현했습니다.",
+      "적립금 내역 조회에 무한스크롤을 적용하고, 위치 정보·지도 마커·필터/정렬 상태를 연동해 주변 꽃집 탐색 화면에서 리스트와 지도 동작이 함께 반영되도록 구현했습니다.",
     ],
   },
   {
     id: "dongne-flower-vender",
     project: "플로비 벤더",
+    projectType: "입점사 상품/운영 관리",
     company: "(주)방배동밸리",
     period: "2025.11 - 2026.04",
     role: "Frontend Developer",
@@ -225,12 +229,13 @@ export const resumeItems = [
       "무료견적 필터 스와이프 동작 수정과 영업상태 API 연동을 진행했습니다.",
     ],
     outcomes: [
-      "상품 수정 플로우, 미리보기, 필터 인터랙션, 영업상태 API 연동 기능을 구현했습니다.",
+      "입점사가 상품 정보를 수정하고 결과를 미리 확인할 수 있도록 상품 수정 플로우와 리스트/상세 미리보기를 구현했으며, 무료견적 필터와 영업상태 API 연동을 통해 운영 화면의 주요 인터랙션을 처리했습니다.",
     ],
   },
   {
     id: "wowcruise",
     project: "WOWCRUISE",
+    projectType: "예약 플로우 및 객실 선택",
     company: "(주)방배동밸리",
     period: "2025.07 - 2025.10",
     role: "Frontend Developer",
@@ -243,12 +248,13 @@ export const resumeItems = [
       "시니어 할인 조건 분기를 객실 선택 로직에 반영했습니다.",
     ],
     outcomes: [
-      "예약 단계 화면, 객실 선택, 세션 유지, 검색 인터랙션, 할인 분기 기능을 구현했습니다.",
+      "예약 단계 화면과 객실 선택 플로우를 구성하고, 홀드 타이머 관련 세션 유지 로직과 검색 키보드 이벤트, 시니어 할인 조건 분기를 반영해 예약 과정에서 필요한 선택·유지·검증 흐름을 처리했습니다.",
     ],
   },
   {
     id: "sidiz",
     project: "SIDIZ",
+    projectType: "Shopify Liquid 기반 브랜드몰 기능 개선",
     company: "(주)방배동밸리",
     period: "2024.09 - 2025.05",
     role: "Frontend Developer",
@@ -261,7 +267,7 @@ export const resumeItems = [
       "파일 첨부명 난수화 처리를 적용했습니다.",
     ],
     outcomes: [
-      "리뷰 섹션, 주문 모달, 문의 스크립트, 첨부 처리 기능을 구현했습니다.",
+      "Shopify Liquid 기반 상품 리뷰 섹션과 배송일 변경 모달을 구현하고, 1:1 문의 스크립트와 파일 첨부명 난수화 처리를 적용해 브랜드몰의 상품 상세·주문·문의 영역 기능을 보완했습니다.",
     ],
   },
 ];
