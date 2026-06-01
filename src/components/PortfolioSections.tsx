@@ -268,7 +268,7 @@ export default function PortfolioSections({ projects }) {
       </aside>
 
       <section
-        ref={(el) => (sectionRefs.current[0] = el)}
+        ref={(el) => { sectionRefs.current[0] = el; }}
         data-section-index={0}
         className={`portfolio-section${active === 0 ? " is-active" : ""}`}
       >
@@ -276,14 +276,14 @@ export default function PortfolioSections({ projects }) {
           <p className="label">ABOUT</p>
           <h1 className="page-title">안녕하세요, 프론트엔드 개발자 제갈민혁입니다.</h1>
           <p className="page-subtitle">
-            “사용자 친화적인 인터페이스와 멋진 웹 애플리케이션을 만드는 데 열정을 가진 프론트엔드 개발자입니다.<br />
-            빠르게 변화하는 기술 트렌드를 따라가며, 창의적인 문제 해결과 협업을 통해 최고의 사용자 경험을 제공하고 싶습니다.”
+            사용자 화면과 관리자 도구를 구현해온 프론트엔드 개발자입니다.<br />
+            예약 플로우, 지도 탐색, 검색/필터, 엑셀 다운로드 등 실서비스 화면에서 필요한 기능을 개발했습니다.
           </p>
         </div>
       </section>
 
       <section
-        ref={(el) => (sectionRefs.current[1] = el)}
+        ref={(el) => { sectionRefs.current[1] = el; }}
         data-section-index={1}
         className={`portfolio-section${active === 1 ? " is-active" : ""}`}
       >
@@ -322,7 +322,7 @@ export default function PortfolioSections({ projects }) {
       </section>
 
       <section
-        ref={(el) => (sectionRefs.current[2] = el)}
+        ref={(el) => { sectionRefs.current[2] = el; }}
         data-section-index={2}
         className={`portfolio-section${active === 2 ? " is-active" : ""}`}
       >

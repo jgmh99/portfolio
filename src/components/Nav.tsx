@@ -1,11 +1,26 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import type { CSSProperties, PointerEvent } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import LiquidGlassCanvas from "@/components/LiquidGlassCanvas";
 
-const links = [
+type Theme = "light" | "dark";
+
+type NavLink = {
+  href: string;
+  label: string;
+};
+
+type DragState = {
+  active: boolean;
+  startX: number;
+  currentX: number;
+  moved: boolean;
+};
+
+const links: NavLink[] = [
   { href: "/projects", label: "포트폴리오" },
   { href: "/resume", label: "경력기술서" },
 ];
@@ -13,9 +28,9 @@ const links = [
 export default function Nav() {
   const pathname = usePathname();
   const router = useRouter();
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState<Theme>("light");
   const [dragX, setDragX] = useState(0);
-  const dragRef = useRef({ active: false, startX: 0, currentX: 0, moved: false });
+  const dragRef = useRef<DragState>({ active: false, startX: 0, currentX: 0, moved: false });
   const suppressClickRef = useRef(false);
   const activeIndex = useMemo(
     () => Math.max(0, links.findIndex((link) => pathname.startsWith(link.href))),
@@ -28,14 +43,17 @@ export default function Nav() {
   }, [theme]);
 
   const toggleTheme = () => {
-    const next = theme === "dark" ? "light" : "dark";
+    const next: Theme = theme === "dark" ? "light" : "dark";
     setTheme(next);
   };
 
-  const navigate = (href) => {
+  const navigate = (href: string) => {
     if (href === pathname) return;
-    if (document.startViewTransition) {
-      document.startViewTransition(() => {
+    const doc = document as Document & {
+      startViewTransition?: (callback: () => void) => void;
+    };
+    if (doc.startViewTransition) {
+      doc.startViewTransition(() => {
         router.push(href);
       });
       return;
@@ -43,7 +61,7 @@ export default function Nav() {
     router.push(href);
   };
 
-  const getLiquidOffset = (event) => {
+  const getLiquidOffset = (event: PointerEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const segmentWidth = (rect.width - 16) / links.length;
     const pointerX = event.clientX - rect.left - 8;
@@ -54,13 +72,18 @@ export default function Nav() {
     return desiredLeft - activeIndex * segmentWidth;
   };
 
-  const onTabPointerDown = (event) => {
+  const onTabPointerDown = (event: PointerEvent<HTMLDivElement>) => {
+    const target = event.target as HTMLElement | null;
+    if (target?.closest(".bottom-nav-link")) {
+      return;
+    }
+
     dragRef.current = { active: true, startX: event.clientX, currentX: 0, moved: false };
     setDragX(0);
     event.currentTarget.setPointerCapture?.(event.pointerId);
   };
 
-  const onTabPointerMove = (event) => {
+  const onTabPointerMove = (event: PointerEvent<HTMLDivElement>) => {
     if (!dragRef.current.active) return;
     const pointerDelta = event.clientX - dragRef.current.startX;
     const isDragging = Math.abs(pointerDelta) > 8;
@@ -70,7 +93,7 @@ export default function Nav() {
     setDragX(nextX);
   };
 
-  const endTabDrag = (event) => {
+  const endTabDrag = (event: PointerEvent<HTMLDivElement>) => {
     if (!dragRef.current.active) return;
     const wasDragged = dragRef.current.moved;
     const finalDragX = dragRef.current.currentX;
@@ -93,10 +116,15 @@ export default function Nav() {
     }, 0);
   };
 
-  const onMobileTabClick = (href) => {
+  const onMobileTabClick = (href: string) => {
     if (suppressClickRef.current) return;
     navigate(href);
   };
+
+  const navStyle = {
+    "--liquid-x": `${activeIndex * 100}%`,
+    "--drag-x": `${dragX}px`,
+  } as CSSProperties;
 
   return (
     <>
@@ -135,7 +163,7 @@ export default function Nav() {
       <div
         className={`bottom-nav-wrap${dragX !== 0 ? " is-dragging" : ""}`}
         aria-label="페이지 이동"
-        style={{ "--liquid-x": `${activeIndex * 100}%`, "--drag-x": `${dragX}px` }}
+        style={navStyle}
         onPointerDown={onTabPointerDown}
         onPointerMove={onTabPointerMove}
         onPointerUp={endTabDrag}

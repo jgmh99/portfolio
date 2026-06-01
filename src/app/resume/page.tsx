@@ -33,7 +33,7 @@ export default function ResumePage() {
       <section className="block resume-overview">
         <p><strong>직무</strong> 프론트엔드 개발자</p>
         <p><strong>경력</strong> 2024.09 ~ 현재</p>
-        <p><strong>핵심역량</strong> 복잡한 화면/상태/라우팅 구현, 운영 이슈 신속 대응, 백오피스·CRM 도구 구조화</p>
+        <p><strong>핵심역량</strong> 사용자 화면과 관리자 도구를 구현해온 프론트엔드 개발자입니다. 예약 플로우, 지도 탐색, 검색/필터, 엑셀 다운로드 등 실서비스 화면에서 필요한 기능을 개발했습니다.</p>
       </section>
 
       <div className="resume-list">
