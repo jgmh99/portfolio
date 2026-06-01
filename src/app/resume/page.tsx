@@ -12,7 +12,7 @@ export default function ResumePage() {
   return (
     <section className="page-shell">
       <header className="page-head">
-        <p className="label">경력기술서</p>
+        <p className="label">CAREER DESCRIPTION</p>
         <div className="resume-title-row">
           <h1 className="page-title">경력기술서</h1>
           <div className="resume-actions" aria-label="경력기술서 파일">
