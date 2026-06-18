@@ -5,14 +5,14 @@ import ProjectsScrollSection from "@/components/ProjectsScrollSection";
 
 const PROJECT_FILTERS = [
   { label: "전체", value: "all" },
-  { label: "사내", value: "company" },
-  { label: "Toy", value: "toy" },
+  { label: "회사", value: "company" },
+  { label: "개인", value: "toy" },
 ];
 
 const PROJECT_TITLES = {
-  all: "진행한 전체 프로젝트",
-  company: "진행한 사내 프로젝트",
-  toy: "진행한 Toy 프로젝트",
+  all: "프론트엔드 개발 포트폴리오",
+  company: "회사 프로젝트 포트폴리오",
+  toy: "개인 프로젝트 포트폴리오",
 };
 
 export default function PortfolioSections({ projects }) {
@@ -59,7 +59,7 @@ export default function PortfolioSections({ projects }) {
       {
         category: "Frontend",
         strong: ["React", "Next.js", "Tailwind CSS"],
-        experienced: ["Shopify Liquid", "Vue"],
+        experienced: ["Shopify Liquid", "Vue", "Electron"],
       },
       {
         category: "RDBMS",
@@ -67,8 +67,18 @@ export default function PortfolioSections({ projects }) {
         experienced: ["MySQL", "Oracle", "Firebase"],
       },
       {
+        category: "Version Control",
+        strong: ["Git", "GitHub"],
+        experienced: [],
+      },
+      {
+        category: "CI/CD",
+        strong: ["GitHub Actions", "semantic-release", "commitlint"],
+        experienced: ["GitHub Pages", "electron-builder"],
+      },
+      {
         category: "DevOps",
-        strong: ["Git"],
+        strong: ["CI/CD", "Auto Deployment"],
         experienced: ["Docker", "Nginx"],
       },
     ],
